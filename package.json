@@ -1,8 +1,14 @@
 {
   "name": "gulp-edp",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "gulp with edp",
   "main": "index.js",
+  "files": ["index.js", "lib"],
+  "repository": "junmer/gulp-edp",
+  "author": {
+    "name": "junmer",
+    "email": "junmer@foxmail.com"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,7 +16,6 @@
     "gulp",
     "edp"
   ],
-  "author": "junmer",
   "license": "MIT",
   "dependencies": {
     "edp-build": "^1.1.1",
