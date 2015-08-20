@@ -36,11 +36,12 @@ gulp.src(
 
 Type: `Array`
 
-Set the files to be exclude. match `minimatch` or `Regular Expression`.
+Set the files to be excluded. match [`minimatch`][minimatch-url] or `Regular Expression`.
 
 ### getProcessors
 
 Type: `Function`
+
 Return: `Array`
 
 Create the edp processors, return processor list.
@@ -51,9 +52,9 @@ The following processors are bundled with edp:
 
 * [LessCompiler][lesscompiler-url] - Compile `*.less` to `*.css`
 * [StylusCompiler][styluscompiler-url] - Compile `*.styl` to `*.css`
-* [CssCompressor][csscompressor-url] - Compress css with clean-css
-* [JsCompressor][jscompressor-url] - Compress js with uglifyjs2
-* [ModuleCompiler][modulecompiler-url] - An AMD optimizer supports rich APIs  
+* [CssCompressor][csscompressor-url] - Compress css with [`clean-css`][clean-css-url]
+* [JsCompressor][jscompressor-url] - Compress js with [`uglifyjs2`][uglifyjs2-url]
+* [ModuleCompiler][modulecompiler-url] - An [`AMD`][amd-url] optimizer supports rich APIs  
 * [PathMapper][pathmapper-url] - Repalce development path to production 
 * [MD5Renamer][md5renamer-url] - Rename filename with md5 and replace the links
 * [OutputCleaner][outputcleaner-url] - Ignore unuseful files
@@ -62,15 +63,15 @@ See [Edp Build WIKI][edp-wiki-build-url] for more processors.
 
 ## AMD Optimize
 
-|                   | edp                | requriejs\(r.js\)  | amd-optimize       |
-| ----------------- |:------------------:|:------------------:|:------------------:|
-| baseUrl           | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| paths             | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| packages          | :heavy_check_mark: | :heavy_check_mark: | :x:                |
-| map               | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| shim              | :x:                | :heavy_check_mark: | :heavy_check_mark: |
-| stream friendly   | :heavy_check_mark: | :x:                | :heavy_check_mark: |
-| custom combine    | :heavy_check_mark: | :x:                | :x:                |
+|                   | edp | requriejs\(r.js\) | amd-optimize |
+| ----------------- |:---:|:-----------------:|:------------:|
+| baseUrl           | √   | √                 | √            |
+| paths             | √   | √                 | √            |
+| packages          | √   | √                 | X            |
+| map               | √   | √                 | √            |
+| shim              | X   | √                 | √            |
+| stream friendly   | √   | X                 | √            |
+| custom combine    | √   | X                 | X            |
 
 
 ## Related
@@ -83,7 +84,12 @@ See [Edp Build WIKI][edp-wiki-build-url] for more processors.
 [dep-url]: https://david-dm.org/junmer/gulp-edp
 [dep-image]: http://img.shields.io/david/junmer/gulp-edp.svg
 
+[minimatch-url]: https://github.com/isaacs/minimatch
+[clean-css-url]: https://github.com/jakubpawlowicz/clean-css
+[uglifyjs2-url]: https://github.com/mishoo/UglifyJS2
+[amd-url]: https://github.com/amdjs/amdjs-api
 [edp-url]: https://github.com/ecomfe/edp
+
 [edp-wiki-build-url]: https://github.com/ecomfe/edp/wiki/Build
 [lesscompiler-url]: https://github.com/ecomfe/edp/wiki/build-processors#lesscompiler
 [styluscompiler-url]: https://github.com/ecomfe/edp/wiki/build-processors#styluscompiler
