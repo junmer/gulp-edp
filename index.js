@@ -10,6 +10,7 @@ var edp = require('edp-core');
 var eutil = edp.util;
 var ProcessContext = require('edp-build/lib/process-context');
 var FileInfo = require('edp-build/lib/file-info');
+var helper = require('edp-build/lib/helper');
 var build = require('./lib/build');
 
 
@@ -22,6 +23,7 @@ module.exports = function (options) {
         input: gulpCwd,
         baseDir: gulpCwd,
         output: gulpCwd,
+        exclude: [],
         injectProcessor: function (processors) {
 
             var me = this;
@@ -35,12 +37,22 @@ module.exports = function (options) {
         }
     }, options);
 
-
     var processContext = new ProcessContext(processOptions);
 
     function start(file, encoding, callback) {
 
         var relativePath = edp.path.relative(processContext.baseDir, file.path);
+
+        var isExclude = processContext.exclude.some(function (excludeFile) {
+            if (helper.satisfy(relativePath, excludeFile, file.stat)) {
+                return true;
+            }
+        });
+
+        if (isExclude) {
+            callback();
+            return;
+        }
 
         var fileData = new FileInfo({
             data: file.contents,
