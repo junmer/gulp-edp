@@ -62,15 +62,15 @@ See [Edp Build WIKI][edp-wiki-build-url] for more processors.
 
 ## AMD Optimize
 
-|                   | edp                      | requriejs\(r.js\)        | amd-optimize             |
-| ----------------- |:------------------------:|:------------------------:|:------------------------:|
-| baseUrl           | :heavy_check_mark:       | :heavy_check_mark:       | :heavy_check_mark:       |
-| paths             | :heavy_check_mark:       | :heavy_check_mark:       | :heavy_check_mark:       |
-| packages          | :heavy_check_mark:       | :heavy_check_mark:       | :heavy_multiplication_x: |
-| map               | :heavy_check_mark:       | :heavy_check_mark:       | :heavy_check_mark:       |
-| shim              | :heavy_multiplication_x: | :heavy_check_mark:       | :heavy_check_mark:       |
-| stream-friendly   | :heavy_check_mark:       | :heavy_multiplication_x: | :heavy_check_mark:       |
-| custom combine    | :heavy_check_mark:       | :heavy_multiplication_x: | :heavy_multiplication_x: |
+|                   | edp                | requriejs\(r.js\)  | amd-optimize       |
+| ----------------- |:------------------:|:------------------:|:------------------:|
+| baseUrl           | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| paths             | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| packages          | :heavy_check_mark: | :heavy_check_mark: | :x:                |
+| map               | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| shim              | :x:                | :heavy_check_mark: | :heavy_check_mark: |
+| stream friendly   | :heavy_check_mark: | :x:                | :heavy_check_mark: |
+| custom combine    | :heavy_check_mark: | :x:                | :x:                |
 
 
 ## Related
