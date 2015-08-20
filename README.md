@@ -4,12 +4,6 @@
 [![Downloads][downloads-image]][npm-url]
 [![Dependencies][dep-image]][dep-url]
 
-[downloads-image]: http://img.shields.io/npm/dm/gulp-edp.svg
-[npm-url]: https://npmjs.org/package/gulp-edp
-[npm-image]: http://img.shields.io/npm/v/gulp-edp.svg
-[dep-url]: https://david-dm.org/junmer/gulp-edp
-[dep-image]: http://img.shields.io/david/junmer/gulp-edp.svg
-
 > gulp with edp
 
 ## Usage
@@ -64,26 +58,33 @@ The following processors are bundled with edp:
 * [MD5Renamer][md5renamer-url] - Rename filename with md5 and replace the links
 * [OutputCleaner][outputcleaner-url] - Ignore unuseful files
 
-See [Edp Build WIKI][edp-wiki-buid-url] for more processors.
+See [Edp Build WIKI][edp-wiki-build-url] for more processors.
 
 ## AMD Optimize
 
-|                   | edp              | requriejs\(r.js\) | amd-optimize     |
-| ----------------- |:----------------:|:-----------------:|:----------------:|
-| baseUrl           | :heart_eyes_cat: | :heart_eyes_cat:  | :heart_eyes_cat: |
-| paths             | :heart_eyes_cat: | :heart_eyes_cat:  | :heart_eyes_cat: |
-| packages          | :heart_eyes_cat: | :heart_eyes_cat:  | :scream_cat:     |
-| map               | :heart_eyes_cat: | :heart_eyes_cat:  | :heart_eyes_cat: |
-| shim              | :scream_cat:     | :heart_eyes_cat:  | :heart_eyes_cat: |
-| stream-friendly   | :heart_eyes_cat: | :scream_cat:      | :heart_eyes_cat: |
-| custom combine    | :heart_eyes_cat: | :scream_cat:      | :scream_cat:     |
+|                   | edp                      | requriejs\(r.js\)        | amd-optimize             |
+| ----------------- |:------------------------:|:------------------------:|:------------------------:|
+| baseUrl           | :heavy_check_mark:       | :heavy_check_mark:       | :heavy_check_mark:       |
+| paths             | :heavy_check_mark:       | :heavy_check_mark:       | :heavy_check_mark:       |
+| packages          | :heavy_check_mark:       | :heavy_check_mark:       | :heavy_multiplication_x: |
+| map               | :heavy_check_mark:       | :heavy_check_mark:       | :heavy_check_mark:       |
+| shim              | :heavy_multiplication_x: | :heavy_check_mark:       | :heavy_check_mark:       |
+| stream-friendly   | :heavy_check_mark:       | :heavy_multiplication_x: | :heavy_check_mark:       |
+| custom combine    | :heavy_check_mark:       | :heavy_multiplication_x: | :heavy_multiplication_x: |
 
 
 ## Related
 
-- [edp](https://github.com/ecomfe/edp)
+- [edp][edp-url]
 
-[edp-wiki-buid-url]: https://github.com/ecomfe/edp/wiki/Build
+[downloads-image]: http://img.shields.io/npm/dm/gulp-edp.svg
+[npm-url]: https://npmjs.org/package/gulp-edp
+[npm-image]: http://img.shields.io/npm/v/gulp-edp.svg
+[dep-url]: https://david-dm.org/junmer/gulp-edp
+[dep-image]: http://img.shields.io/david/junmer/gulp-edp.svg
+
+[edp-url]: https://github.com/ecomfe/edp
+[edp-wiki-build-url]: https://github.com/ecomfe/edp/wiki/Build
 [lesscompiler-url]: https://github.com/ecomfe/edp/wiki/build-processors#lesscompiler
 [styluscompiler-url]: https://github.com/ecomfe/edp/wiki/build-processors#styluscompiler
 [csscompressor-url]: https://github.com/ecomfe/edp/wiki/build-processors#csscompressor
