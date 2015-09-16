@@ -12,21 +12,25 @@
 var gulp = require('gulp');
 var edp = require('gulp-edp');
 
-gulp.src(
-    [
-        'src/**/*.js'
-        'dep/**/*.js',
-        '!dep/**/{demo,demo/**}',
-        '!dep/**/{test,test/**}'
-    ]
-)
-.pipe(edp({
-    getProcessors: function () {
-        var moduleProcessor = new this.ModuleCompiler();
-        return [moduleProcessor];
-    }
-}))
-.pipe(gulp.dest('dist'));
+var edpConfig = require('./edp-build-config');
+
+gulp.task('edp', function () {
+    return gulp.src(
+        [
+            'src/**/*.js',
+            'dep/**/*.js',
+            '!dep/**/{demo,demo/**}',
+            '!dep/**/{test,test/**}',
+            '*.html'
+        ]
+    )
+    .pipe(edp(edpConfig))
+    .pipe(gulp.dest('dist'));
+})
+
+
+gulp.task('default', ['edp']);
+
 
 ```
 

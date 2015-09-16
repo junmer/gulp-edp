@@ -13,16 +13,17 @@ var FileInfo = require('edp-build/lib/file-info');
 var helper = require('edp-build/lib/helper');
 var build = require('./lib/build');
 
-
 module.exports = function (options) {
     'use strict';
 
     var gulpCwd = process.cwd();
 
+    var env = gutil.env;
+
+    var input = options.input || gulpCwd;
+    var stage = env.stage || 'default';
+
     var processOptions = eutil.extend({
-        input: gulpCwd,
-        baseDir: gulpCwd,
-        output: gulpCwd,
         exclude: [],
         injectProcessor: function (processors) {
 
@@ -35,7 +36,12 @@ module.exports = function (options) {
         getProcessors: function () {
             return [];
         }
-    }, options);
+    }, options, {
+        stage: stage,
+        input: input,
+        baseDir: input,
+        output: input
+    });
 
     var processContext = new ProcessContext(processOptions);
 
@@ -73,7 +79,7 @@ module.exports = function (options) {
 
         build(processContext, processOptions, function (outputs) {
 
-            outputs.forEach(function (file) {
+            outputs && outputs.forEach(function (file) {
 
                 if (file.outputPath) {
 
