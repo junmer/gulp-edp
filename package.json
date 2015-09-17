@@ -1,6 +1,6 @@
 {
   "name": "gulp-edp",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "gulp with edp",
   "main": "index.js",
   "files": ["index.js", "lib"],
