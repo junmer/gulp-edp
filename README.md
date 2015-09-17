@@ -17,8 +17,8 @@ var edpConfig = require('./edp-build-config');
 gulp.task('edp', function () {
     return gulp.src(
         [
-            'src/**/*.js',
-            'dep/**/*.js',
+            'src/**',
+            'dep/**',
             '!dep/**/{demo,demo/**}',
             '!dep/**/{test,test/**}',
             '*.html'
