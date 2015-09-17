@@ -47,9 +47,9 @@ module.exports = function (options) {
 
     function start(file, encoding, callback) {
 
-        // check null
-        if (file.isNull()) {
-            callback(null, file);
+        // check isDirectory
+        if (file.isDirectory()) {
+            callback();
             return;
         }
 
