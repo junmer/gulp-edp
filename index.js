@@ -64,8 +64,7 @@ module.exports = function (options) {
             data: file.contents,
             extname: edp.path.extname(file).slice(1),
             path: relativePath,
-            fullPath: file.path,
-            fileEncoding: encoding
+            fullPath: file.path
         });
 
         processContext.addFile(fileData);
