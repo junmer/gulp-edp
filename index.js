@@ -47,6 +47,12 @@ module.exports = function (options) {
 
     function start(file, encoding, callback) {
 
+        // check null
+        if (file.isNull()) {
+            callback(null, file);
+            return;
+        }
+
         var relativePath = edp.path.relative(processContext.baseDir, file.path);
 
         var isExclude = processContext.exclude.some(function (excludeFile) {
