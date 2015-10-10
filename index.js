@@ -12,6 +12,7 @@ var ProcessContext = require('edp-build/lib/process-context');
 var FileInfo = require('edp-build/lib/file-info');
 var helper = require('edp-build/lib/helper');
 var build = require('./lib/build');
+var rev = require('./lib/rev');
 
 module.exports = function (options) {
     'use strict';
@@ -25,6 +26,7 @@ module.exports = function (options) {
 
     var processOptions = eutil.extend({
         exclude: [],
+        revCombineConfig: rev.getCombineConfig,
         injectProcessor: function (processors) {
 
             var me = this;
